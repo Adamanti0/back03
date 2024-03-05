@@ -4,6 +4,7 @@ import RouteLogin from '../routes/login_route';
 import RouteMenu from '../routes/menu_route';
 import RouteList from '../routes/list_route';
 import RouteSegPagina from '../routes/seg_pagina.rou';
+import RouteSegRol from '../routes/seg_rol.rou';
 
 class Server{
     private app: Application;
@@ -30,6 +31,7 @@ class Server{
         this.app.use('/api/menu',RouteMenu);
         this.app.use('/api',RouteList);
         this.app.use('/api/seg_pagina',RouteSegPagina);
+        this.app.use('/api/seg_rol',RouteSegRol);
     }
 }
 

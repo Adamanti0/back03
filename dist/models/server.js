@@ -9,6 +9,7 @@ const login_route_1 = __importDefault(require("../routes/login_route"));
 const menu_route_1 = __importDefault(require("../routes/menu_route"));
 const list_route_1 = __importDefault(require("../routes/list_route"));
 const seg_pagina_rou_1 = __importDefault(require("../routes/seg_pagina.rou"));
+const seg_rol_rou_1 = __importDefault(require("../routes/seg_rol.rou"));
 class Server {
     constructor() {
         this.app = (0, express_1.default)();
@@ -31,6 +32,7 @@ class Server {
         this.app.use('/api/menu', menu_route_1.default);
         this.app.use('/api', list_route_1.default);
         this.app.use('/api/seg_pagina', seg_pagina_rou_1.default);
+        this.app.use('/api/seg_rol', seg_rol_rou_1.default);
     }
 }
 exports.default = Server;

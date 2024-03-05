@@ -2,6 +2,11 @@ import { Request, Response } from 'express';
 import sequelize from '../db/connection';
 import { QueryTypes } from 'sequelize';
 
+export const getQuery = async (req: Request, res: Response) => {
+   const{query}=req.params;
+   const consulta = `${query}`;
+   ListarTabla(consulta,res);
+}
 export const getAll = async (req: Request, res: Response) => {
    const{esquema, objeto}=req.params;
    const consulta = `select*from ${esquema}.${objeto}`;

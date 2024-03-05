@@ -7,6 +7,7 @@ const express_1 = require("express");
 const list_controller_1 = require("../controllers/list_controller");
 const validate_token_1 = __importDefault(require("./validate-token"));
 const router = (0, express_1.Router)();
+router.get('/query/:query', validate_token_1.default, list_controller_1.getQuery);
 router.get('/object/:esquema/:objeto', validate_token_1.default, list_controller_1.getAll);
 router.get('/object/:esquema/:objeto/:condicion', validate_token_1.default, list_controller_1.getWhere);
 router.get('/object/:esquema/:objeto/:column/:valor', validate_token_1.default, list_controller_1.getColumn);

@@ -12,9 +12,15 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.getApiestado = exports.getFunction = exports.getColumn = exports.getWhere = exports.getAll = void 0;
+exports.getApiestado = exports.getFunction = exports.getColumn = exports.getWhere = exports.getAll = exports.getQuery = void 0;
 const connection_1 = __importDefault(require("../db/connection"));
 const sequelize_1 = require("sequelize");
+const getQuery = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const { query } = req.params;
+    const consulta = `${query}`;
+    ListarTabla(consulta, res);
+});
+exports.getQuery = getQuery;
 const getAll = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { esquema, objeto } = req.params;
     const consulta = `select*from ${esquema}.${objeto}`;
